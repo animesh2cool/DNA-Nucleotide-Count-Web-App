@@ -7,7 +7,7 @@ image = Image.open('dna-logo.jpg')
 
 st.image(image, use_column_width=True)
 st.write("""
-# DNA Nucleotide Count Web App
+# DNA Nucleotide Count
 This app counts the nucleotide composition of query DNA!
 ***
 """)
@@ -23,11 +23,11 @@ sequence = sequence[1:]
 sequence = ''.join(sequence)
 sequence
 
-st.header('INPUT (DNA Query')
+st.header('INPUT (DNA Query)')
 sequence
 st.header('OUTPUT (DNA Nucleotide Count)')
 
-st.subheader('1. Print Dictionary')
+st.subheader('1. Dictionary')
 def DNA_nucleotide_count(seq):
     d = dict([
         ('A',seq.count('A')),
@@ -42,7 +42,7 @@ X_label = list(X)
 X_values = list(X.values())
 X
 
-st.subheader('2. Print text')
+st.subheader('2. text')
 st.write('There are  ' + str(X['A']) + ' adenine (A)')
 st.write('There are  ' + str(X['C']) + ' thymine (C)')
 st.write('There are  ' + str(X['G']) + ' guanine (G)')
@@ -63,6 +63,6 @@ p = alt.Chart(df).mark_bar().encode(
     y='count'
 )
 p = p.properties(
-    width=alt.Step(80)  # controls width of bar.
+    width=alt.Step(100)  
 )
 st.write(p)
